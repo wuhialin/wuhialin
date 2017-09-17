@@ -35,7 +35,14 @@
             }
         });
         if(urls.length){
-            $.post('http://yii2.tk/crawl/img', {data: urls});
+            try{
+                $.post('http://yii2.tk/crawl/img', {data: urls});
+            }
+            catch(e){
+                if(typeof console.log === 'function'){
+                    console.log(e);
+                }
+            }
         }
-    }, 10000);
+    }, 5000);
 })();

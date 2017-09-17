@@ -20,25 +20,17 @@
 
     setInterval(function(){
         var urls = [];
-        $('img:not(['+attr+'])').each(function(){
-            var url = resolve($(this).attr('src'));
-            $(this).attr(attr, 1);
-            urls.push(url);
-        });
-        if(urls.length){
-            $.post('http://yii2.tk/crawl/img', {data: urls});
-        }
-    }, 1000);
-
-    setInterval(function(){
-        var urls = [];
-        $('*:not(['+attr+'])').each(function(){
+        $('*:visible:not(['+attr+'])').each(function(){
             $(this).attr(attr, 1);
             var image = $(this).css('background-image'),
                 url;
             image = image.substr(3).replace(/[\'\"\(\)]/g, '');
             if(image && image != 'none' && image != 'e'){
                 url = resolve(image);
+                urls.push(url);
+            }
+            if(this.tagName.toLowerCase() === 'img'){
+                url = resolve($(this).attr('src'));
                 urls.push(url);
             }
         });

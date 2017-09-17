@@ -8,6 +8,7 @@
 // @match        https://*/*
 // @require      https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js
 // @grant        none
+// ==/UserScript==
 
 (function() {
     // #@require      https://wuhialin.github.io/js/crawl-image.js

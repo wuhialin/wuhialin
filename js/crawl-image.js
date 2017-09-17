@@ -1,4 +1,16 @@
+// ==UserScript==
+// @name         捕获查看到的图片
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  try to take over the world!
+// @author       wuhialin
+// @match        http://*/*
+// @match        https://*/*
+// @require      https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js
+// @grant        none
+
 (function() {
+    // #@require      https://wuhialin.github.io/js/crawl-image.js
     'use strict';
     var attr = 'use' + String(Math.random()).substr(2);
 

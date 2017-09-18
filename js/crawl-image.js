@@ -30,6 +30,10 @@
         else doc_head.removeChild(our_base);
         return resolved_url;
     }
+    
+    if(location.protocol.toLowerCase() === 'https:'){
+        $('head').append('<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">');
+    }
 
     setInterval(function(){
         var urls = [];

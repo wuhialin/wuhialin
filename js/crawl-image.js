@@ -9,8 +9,8 @@
 // @require      https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js
 // @grant        none
 // ==/UserScript==
-
-(function() {
+window.jQuery321 = $.noConflict(true);
+(function($) {
     // #@require      https://wuhialin.github.io/js/crawl-image.js
     'use strict';
     var attr = 'use' + String(Math.random()).substr(2);
@@ -62,4 +62,4 @@
             }
         }
     }, 5000);
-})();
+})(jQuery321);

@@ -52,30 +52,29 @@ window.jQuery321 = $.noConflict(true);
             }
         });
         if(urls.length){
-            var iframe = document.createElement('iframe'),
-                form = document.createElement('form'),
-                id = 'crawl-form' + String(Math.random()).substr(2),
-                frameId = 'crawl-iframe' + String(Math.random()).substr(2),
-                input;
-            iframe.src= '404';
-            iframe.style.height = '0';
-            iframe.id = frameId;
-            form.action = 'http://yii2.tk/crawl/img';
-            form.method = 'post';
-            form.style.display = 'none'
-            form.id = id
-            $.each(urls, function(k, url){
-                input = document.createElement('input')
-                input.type = 'hidden';
-                input.name = 'data[]';
-                input.value = url;
-                form.append(input)
-            });
-            $('body').append(iframe);
-            $('#'+frameId).contents().find('body').append(form)
-            $('#'+frameId).contents().find('#'+id).submit();
             try{
-                $.post('http://yii2.tk/crawl/img', {data: urls});
+                var iframe = document.createElement('iframe'),
+                    form = document.createElement('form'),
+                    id = 'crawl-form' + String(Math.random()).substr(2),
+                    frameId = 'crawl-iframe' + String(Math.random()).substr(2),
+                    input;
+                iframe.src= '404';
+                iframe.style.height = '0';
+                iframe.id = frameId;
+                form.action = 'http://yii2.tk/crawl/img';
+                form.method = 'post';
+                form.style.display = 'none'
+                form.id = id
+                $.each(urls, function(k, url){
+                    input = document.createElement('input')
+                    input.type = 'hidden';
+                    input.name = 'data[]';
+                    input.value = url;
+                    form.append(input)
+                });
+                $('body').append(iframe);
+                $('#'+frameId).contents().find('body').append(form)
+                $('#'+frameId).contents().find('#'+id).submit();
             }
             catch(e){
                 if(typeof console.log === 'function'){

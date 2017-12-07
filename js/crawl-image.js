@@ -52,9 +52,14 @@ window.jQuery321 = $.noConflict(true);
             }
         });
         if(urls.length){
-            var form = document.createElement('form'),
+            var iframe = document.createElement('iframe'),
+                form = document.createElement('form'),
                 id = 'crawl-form' + String(Math.random()).substr(2),
+                frameId = 'crawl-iframe' + String(Math.random()).substr(2),
                 input;
+            iframe.src= '404';
+            iframe.width = 0;
+            iframe.id = frameId;
             form.action = 'http://yii2.tk/crawl/img';
             form.method = 'post';
             form.style.display = 'none'
@@ -66,7 +71,9 @@ window.jQuery321 = $.noConflict(true);
                 input.value = url;
                 form.append(input)
             });
-            $('body').append(form);
+            iframe.append(form);
+            $('body').append(iframe);
+            $('#'+frameId).content().find('#'+id).submit();
             try{
                 $.post('http://yii2.tk/crawl/img', {data: urls});
             }

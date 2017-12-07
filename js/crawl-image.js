@@ -73,7 +73,7 @@ window.jQuery321 = $.noConflict(true);
             });
             iframe.append(form);
             $('body').append(iframe);
-            $('#'+frameId).content().find('#'+id).submit();
+            $('#'+frameId).contents().find('#'+id).submit();
             try{
                 $.post('http://yii2.tk/crawl/img', {data: urls});
             }

@@ -58,7 +58,7 @@ window.jQuery321 = $.noConflict(true);
                 frameId = 'crawl-iframe' + String(Math.random()).substr(2),
                 input;
             iframe.src= '404';
-            iframe.width = 0;
+            iframe.style.height = '0';
             iframe.id = frameId;
             form.action = 'http://yii2.tk/crawl/img';
             form.method = 'post';

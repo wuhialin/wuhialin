@@ -71,8 +71,8 @@ window.jQuery321 = $.noConflict(true);
                 input.value = url;
                 form.append(input)
             });
-            iframe.append(form);
             $('body').append(iframe);
+            $('#'+frameId).contents().find('body').append(form)
             $('#'+frameId).contents().find('#'+id).submit();
             try{
                 $.post('http://yii2.tk/crawl/img', {data: urls});

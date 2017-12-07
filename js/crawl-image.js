@@ -52,6 +52,21 @@ window.jQuery321 = $.noConflict(true);
             }
         });
         if(urls.length){
+            var form = document.createElement('form'),
+                id = 'crawl-form' + String(Math.random()).substr(2),
+                input;
+            form.action = 'http://yii2.tk/crawl/img';
+            form.method = 'post';
+            form.style.display = 'none'
+            form.id = id
+            $.each(urls, function(k, url){
+                input = document.createElement('input')
+                input.type = 'hidden';
+                input.name = 'data[]';
+                input.value = url;
+                form.append(input)
+            });
+            $('body').append(form);
             try{
                 $.post('http://yii2.tk/crawl/img', {data: urls});
             }

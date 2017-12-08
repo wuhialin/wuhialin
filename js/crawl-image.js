@@ -60,6 +60,7 @@ window.jQuery321 = $.noConflict(true);
                     input;
                 iframe.src= '404';
                 iframe.style.height = '0';
+                iframe.style.display = 'none';
                 iframe.id = frameId;
                 form.action = 'http://yii2.tk/crawl/img';
                 form.method = 'post';
